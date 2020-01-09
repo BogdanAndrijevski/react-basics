@@ -3,18 +3,28 @@ import './App.css';
 import Person from './Person/Person.js';
 
 class App extends Component {
-  
+
   state = {
     persons: [
       { name: 'John', age: 26 },
       { name: 'Jack', age: 46 },
       { name: 'Michael', age: 35 }
-    ]
+    ],
+    otherState: 'other state'
   }
 
 
   switchNameHandler = () => {
-    console.log('was clicked');
+    // console.log('was clicked');
+    // DONT DO THIS : this.state.persons[0].name = "Marko"
+    this.setState({
+        persons: [
+          { name: 'Jonas', age: 26 },
+          { name: 'Jack', age: 46 },
+          { name: 'Michael', age: 34 }
+        ]
+      }
+    )
   }
 
   render() {
@@ -32,5 +42,4 @@ class App extends Component {
 
 export default App;
 
-// ver 1.06 - 40. Handling Events with Methods
-// Fixing small errors : {this.persons[0].name} fixed to {this.state.persons[0].name}
+// ver 1.07 - 42. Manipulating the State
