@@ -1,3 +1,12 @@
 .App {
   text-align: center;
 }
+h4{
+  color: orange;
+}
+button{
+  background-color: black;
+  border: 2px solid darksalmon;
+  color: darksalmon;
+
+}
