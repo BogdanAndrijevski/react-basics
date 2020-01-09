@@ -16,5 +16,5 @@ class App extends Component {
 
 export default App;
 
-// ver 1.01 - tut 32. Creating a Functional Component
+// ver 1.02 - tut 35. Creating a Functional Component
  
