@@ -7,7 +7,9 @@ class App extends Component {
     return (
       <div className="App">
         <h1>Hello</h1>
-        <Person/>
+        <Person name="John" age="26">My Hobby: </Person>
+        <Person name="Jack" age="46"/>
+        <Person name="Michael" age="35"/>
        
       </div>
     );
@@ -16,5 +18,5 @@ class App extends Component {
 
 export default App;
 
-// ver 1.02 - tut 35. Creating a Functional Component
+// ver 1.03 - tut 37. working with props
  
