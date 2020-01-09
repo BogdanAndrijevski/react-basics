@@ -18,5 +18,5 @@ class App extends Component {
 
 export default App;
 
-// ver 1.03 - tut 37. working with props
+// ver 1.04 - tut 37. Understanding the Children Property
  
