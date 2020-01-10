@@ -63,12 +63,12 @@ class App extends Component {
           click={this.switchNameHandler.bind(this, 'Max!')}
           name={this.state.persons[0].name}
           age={this.state.persons[0].age}>My Hobby:</Person>
-        {/* <Person
+        <Person
           name={this.state.persons[1].name}
           age={this.state.persons[1].age} />
         <Person
           name={this.state.persons[2].name}
-          age={this.state.persons[2].age} /> */}
+          age={this.state.persons[2].age} />
 
         <button onClick={this.changeFriendNameHandler} >Friend Name Change</button>
         <Friend
@@ -85,4 +85,4 @@ class App extends Component {
 
 export default App;
 
-// ver 1.09 - 47. Adding Two Way Binding
+// ver 1.10 - 48. Adding Styling with Stylesheets
