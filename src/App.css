@@ -10,3 +10,16 @@ button{
   color: darksalmon;
 
 }
+input{
+  background-color : black; 
+  border: 1px solid cyan;
+  margin: 10px;
+  color: cyan;
+  padding-left: 2px;
+}
+/* 
+input[type="text"], textarea {
+
+  background-color : #d1d1d1; 
+
+} */

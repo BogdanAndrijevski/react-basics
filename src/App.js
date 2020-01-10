@@ -28,8 +28,7 @@ class App extends Component {
         { name: 'Jack', age: 46 },
         { name: 'Michael', age: 34 }
       ]
-    }
-    )
+    })
   }
 
   changeFriendNameHandler = () => {
@@ -41,6 +40,17 @@ class App extends Component {
     })
   }
 
+  nameChangeHandler = (event) => {
+    this.setState({
+      persons: [
+        { name: event.target.value, age: 26 },
+        { name: 'Jack', age: 46 },
+        { name: 'Michael', age: 35 }
+      ]
+    })
+
+  }
+
 
   render() {
     return (
@@ -49,15 +59,16 @@ class App extends Component {
         <button onClick={() => this.switchNameHandler('Maximilian!!')} >Switch Name</button>
         {/* <button onClick={() => {return this.switchNameHandler()}} >Switch Name</button> */}
         <Person
+          changed={this.nameChangeHandler}
           click={this.switchNameHandler.bind(this, 'Max!')}
           name={this.state.persons[0].name}
           age={this.state.persons[0].age}>My Hobby:</Person>
-        <Person
+        {/* <Person
           name={this.state.persons[1].name}
           age={this.state.persons[1].age} />
         <Person
           name={this.state.persons[2].name}
-          age={this.state.persons[2].age} />
+          age={this.state.persons[2].age} /> */}
 
         <button onClick={this.changeFriendNameHandler} >Friend Name Change</button>
         <Friend
@@ -74,4 +85,4 @@ class App extends Component {
 
 export default App;
 
-// ver 1.08 - 46. Passing Method References Between Components
+// ver 1.09 - 47. Adding Two Way Binding
