@@ -53,10 +53,23 @@ class App extends Component {
 
 
   render() {
+    const style = {
+      backgroundColor: 'green',
+      font: 'inherit',
+      border: '2px solid lightgreen',
+      padding: '8px',
+      cursor: 'pointer',
+      color: 'white'
+
+    }
+
+
     return (
       <div className="App">
         <h1>Hello</h1>
-        <button onClick={() => this.switchNameHandler('Maximilian!!')} >Switch Name</button>
+        <button 
+        style={style}
+        onClick={() => this.switchNameHandler('Maximilian!!')} >Switch Name</button>
         {/* <button onClick={() => {return this.switchNameHandler()}} >Switch Name</button> */}
         <Person
           changed={this.nameChangeHandler}
@@ -85,4 +98,4 @@ class App extends Component {
 
 export default App;
 
-// ver 1.10 - 48. Adding Styling with Stylesheets
+// ver 1.11 - 49. Working with Inline Styles
