@@ -8,6 +8,16 @@
   color: darksalmon;
   padding: 8px;
   margin: 8px;
+  cursor: pointer;
+}
+
+.btnFriendToggle {
+  background-color: darkblue;
+  border: 2px solid lightblue;
+  color: white;
+  padding: 8px;
+  margin: 8px;
+  cursor: pointer;
 }
 
 input {

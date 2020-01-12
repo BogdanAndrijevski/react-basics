@@ -16,7 +16,8 @@ class App extends Component {
       { name: 'Ash', age: 35 }
     ],
     otherState: 'other state',
-    showPersons: false
+    showPersons: false,
+    showFriends: false
   }
 
 
@@ -55,6 +56,11 @@ class App extends Component {
   togglePersonsHandler = () => {
     const doesShow = this.state.showPersons;
     this.setState({ showPersons: !doesShow })
+  }
+
+  toggleFriendsHandler = () => {
+    const doesShowFriends = this.state.showFriends;
+    this.setState({ showFriends: !doesShowFriends })
   }
 
 
@@ -98,13 +104,25 @@ class App extends Component {
         </div>
         <div className='MainForFriend'>
           <button className='btnFriend' onClick={this.changeFriendNameHandler} >Friend Name Change</button>
-          <Friend
-            click={this.changeFriendNameHandler}
-            name={this.state.friends[0].name}
-            age={this.state.friends[0].age}>My Interests:</Friend>
-          <Friend
-            name={this.state.friends[1].name}
-            age={this.state.friends[1].age} />
+          <button className='btnFriendToggle' onClick={this.toggleFriendsHandler} >Toggle Persons</button>
+
+          {/* <button
+            style={style}
+            onClick={this.togglePersonsHandler} >Toggle Persons</button> */}
+
+          {
+            this.state.showFriends === true ?
+              <div>
+                <Friend
+                  click={this.changeFriendNameHandler}
+                  name={this.state.friends[0].name}
+                  age={this.state.friends[0].age}>My Interests:</Friend>
+                <Friend
+                  name={this.state.friends[1].name}
+                  age={this.state.friends[1].age} />
+              </div>
+              : null
+          }
         </div>
       </div> // <div className="App">
     );
