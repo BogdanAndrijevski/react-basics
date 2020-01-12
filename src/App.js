@@ -72,21 +72,13 @@ class App extends Component {
       padding: '8px',
       cursor: 'pointer',
       color: 'white'
-
     }
 
+    let persons = null;
+    if(this.state.showPersons === true){
+      persons = (
 
-    return (
-      <div className="App">
-        <div className='MainForPerson'>
-          <h1>Hello</h1>
-          <button
-            style={style}
-            onClick={this.togglePersonsHandler} >Toggle Persons</button>
-          {/* onClick={() => this.switchNameHandler('Maximilian!!')} >Switch Name</button> */}
-          {/* <button onClick={() => {return this.switchNameHandler()}} >Switch Name</button> */}
-          {this.state.showPersons === true ?
-            <div>
+        <div>
 
               <Person
                 changed={this.nameChangeHandler}
@@ -99,11 +91,28 @@ class App extends Component {
               <Person
                 name={this.state.persons[2].name}
                 age={this.state.persons[2].age} />
-            </div> : null
-          }
+            </div>
+
+      )
+
+    }
+
+    return (
+      <div className="App">
+        <div className='MainForPerson'>
+          <h1>Hello</h1>
+          <button
+            style={style}
+            onClick={this.togglePersonsHandler} >Toggle Persons</button>
+          {/* onClick={() => this.switchNameHandler('Maximilian!!')} >Switch Name</button> */}
+          {/* <button onClick={() => {return this.switchNameHandler()}} >Switch Name</button> */}
+        
+             {persons}
         </div>
+
+        {/* ---------------------------------- */}
         <div className='MainForFriend'>
-          <button className='btnFriend' onClick={this.changeFriendNameHandler} >Friend Name Change</button>
+          <button className='btnFriendNameChange' onClick={this.changeFriendNameHandler} >Friend Name Change</button>
           <button className='btnFriendToggle' onClick={this.toggleFriendsHandler} >Toggle Persons</button>
 
           {/* <button
@@ -131,4 +140,4 @@ class App extends Component {
 
 export default App;
 
-// ver 1.12 - 53. Rendering Content Conditionally
+// ver 1.15 - 54. Handling Dynamic Content "The JavaScript Way"

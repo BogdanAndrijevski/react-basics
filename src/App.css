@@ -2,13 +2,14 @@
   /* text-align: center; */
 }
 
-.btnFriend {
+.btnFriendNameChange {
   background-color: black;
   border: 2px solid darksalmon;
   color: darksalmon;
   padding: 8px;
-  margin: 8px;
+  margin: 8px auto;
   cursor: pointer;
+  display: block;
 }
 
 .btnFriendToggle {
