@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import Person from './Person/Person.js';
+import Human from './Human/Human.js';
 import Friend from './Friend/Friend.js';
 
 class App extends Component {
@@ -11,7 +12,7 @@ class App extends Component {
       { name: 'Jack', age: 46 },
       { name: 'Michael', age: 35 }
     ],
-    persons_2: [
+    humans: [
       { name: 'John', age: 26 },
       { name: 'Jack', age: 46 },
       { name: 'Michael', age: 35 }
@@ -22,7 +23,7 @@ class App extends Component {
     ],
     otherState: 'other state',
     showPersons: false,
-    showPersons_2: false,
+    showhumans: false,
     showFriends: false
   }
 
@@ -39,11 +40,11 @@ class App extends Component {
     })
   }
 
-  switchNameHandler_2 = (newName) => {
+  switchNameHandlerHuman = (newName) => {
     // console.log('was clicked');
     // DONT DO THIS : this.state.persons[0].name = "Marko"
     this.setState({
-      persons_2: [
+      humans: [
         { name: newName, age: 26 },
         { name: 'Jack', age: 46 },
         { name: 'Michael', age: 34 }
@@ -70,9 +71,9 @@ class App extends Component {
     })
   }
 
-  nameChangeHandler_2 = (event) => {
+  nameChangeHandlerHuman = (event) => {
     this.setState({
-      persons_2: [
+      humans: [
         { name: event.target.value, age: 26 },
         { name: 'Jack', age: 46 },
         { name: 'Michael', age: 35 }
@@ -85,9 +86,9 @@ class App extends Component {
     this.setState({ showPersons: !doesShow })
   }
 
-  togglePersonsHandler_2 = () => {
-    const doesShow = this.state.showPersons_2;
-    this.setState({ showPersons_2: !doesShow })
+  togglePersonsHandlerHuman = () => {
+    const doesShow = this.state.showhumans;
+    this.setState({ showhumans: !doesShow })
   }
 
   toggleFriendsHandler = () => {
@@ -106,8 +107,17 @@ class App extends Component {
       color: 'white'
     }
 
+    const btnHumanStyle = {
+      backgroundColor: 'blue',
+      font: 'inherit',
+      border: '2px solid lightblue',
+      padding: '8px',
+      cursor: 'pointer',
+      color: 'white'
+    }
+
     let persons = null;
-    let persons_2 = null;
+    let humans = null;
 
     if (this.state.showPersons === true) {
       persons = (
@@ -127,20 +137,20 @@ class App extends Component {
       )
     } // end IF
 
-    if (this.state.showPersons_2 === true) {
-      persons_2 = (
+    if (this.state.showhumans === true) {
+      humans = (
         <div>
-          <Person
-            changed={this.nameChangeHandler_2}
-            click={this.switchNameHandler_2.bind(this, 'Max!')}
-            name={this.state.persons_2[0].name}
-            age={this.state.persons_2[0].age}>My Hobby:</Person>
-          <Person
-            name={this.state.persons_2[1].name}
-            age={this.state.persons_2[1].age} />
-          <Person
-            name={this.state.persons_2[2].name}
-            age={this.state.persons_2[2].age} />
+          <Human
+            changed={this.nameChangeHandlerHuman}
+            click={this.switchNameHandlerHuman.bind(this, 'Max!')}
+            name={this.state.humans[0].name}
+            age={this.state.humans[0].age}>My Hobby:</Human>
+          <Human
+            name={this.state.humans[1].name}
+            age={this.state.humans[1].age} />
+          <Human
+            name={this.state.humans[2].name}
+            age={this.state.humans[2].age} />
         </div>
       )
     }
@@ -161,16 +171,16 @@ class App extends Component {
 
         {/* ------------------------------------------- */}
 
-        {/* -------------- Persons 2 -------------------- */}
-        <div className='MainForPerson'>
-          <h1>Hello_2</h1>
+        {/* -------------- Humans -------------------- */}
+        <div className='MainForHuman'>
+          <h1>Human</h1>
           <button
-            style={style}
-            onClick={this.togglePersonsHandler_2} >Toggle Persons_2</button>
+            style={btnHumanStyle}
+            onClick={this.togglePersonsHandlerHuman} >Toggle humans</button>
           {/* onClick={() => this.switchNameHandler('Maximilian!!')} >Switch Name</button> */}
           {/* <button onClick={() => {return this.switchNameHandler()}} >Switch Name</button> */}
 
-          {persons_2}
+          {humans}
         </div>
 
         {/* ------------------------------------------- */}
