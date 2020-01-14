@@ -56,15 +56,15 @@ class App extends Component {
     })
   }
 
-  nameChangeHandler = (event) => {
-    this.setState({
-      persons: [
-        { name: event.target.value, age: 26 },
-        { name: 'Jack', age: 46 },
-        { name: 'Michael', age: 35 }
-      ]
-    })
-  }
+  // nameChangeHandler = (event) => {
+  //   this.setState({
+  //     persons: [
+  //       { name: event.target.value, age: 26 },
+  //       { name: 'Jack', age: 46 },
+  //       { name: 'Michael', age: 35 }
+  //     ]
+  //   })
+  // }
 
   nameChangeHandlerHuman = (event) => {
     this.setState({
@@ -74,6 +74,21 @@ class App extends Component {
         { name: 'Michael', age: 35 }
       ]
     })
+  }
+
+  nameChangeHandler = (event, id) => {
+    const personIndex = this.state.persons.findIndex(p =>{
+      return p.id === id;
+    })
+
+    const person = { ...this.state.persons[personIndex]};
+
+    person.name = event.target.value;
+
+    const persons = [...this.state.persons];
+    persons[personIndex] = person;
+
+    this.setState({persons: persons })
   }
 
   togglePersonsHandler = () => {
@@ -123,7 +138,8 @@ class App extends Component {
               // click={this.deletePersonHandler.bind(this,index)}
               name={person.name}
               age={person.age} 
-              key={person.id}/>
+              key={person.id}
+              changed={(event) => this.nameChangeHandler(event, person.id)}/>
           })}
           {/* <Person
             changed={this.nameChangeHandler}
@@ -223,4 +239,4 @@ class App extends Component {
 
 export default App;
 
-// ver 1.21 - 58. Updating State Immutably"
+// ver 1.23 - 60. Flexible Lists
