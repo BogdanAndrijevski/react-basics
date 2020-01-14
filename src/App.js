@@ -40,16 +40,10 @@ class App extends Component {
     })
   }
 
-  switchNameHandlerHuman = (newName) => {
-    // console.log('was clicked');
-    // DONT DO THIS : this.state.persons[0].name = "Marko"
-    this.setState({
-      humans: [
-        { name: newName, age: 26 },
-        { name: 'Jack', age: 46 },
-        { name: 'Michael', age: 34 }
-      ]
-    })
+  deletePersonHandler = (personIndex) => {
+    const persons = this.state.persons;
+    persons.splice(personIndex, 1);
+    this.setState({persons:persons})
   }
 
   changeFriendNameHandler = () => {
@@ -122,8 +116,12 @@ class App extends Component {
     if (this.state.showPersons === true) {
       persons = (
         <div>
-          {this.state.persons.map(person =>{
-            return  <Person name={person.name} age={person.age} />
+          {this.state.persons.map((person, index) => {
+            return <Person
+              click={() => this.deletePersonHandler(index)}
+              // click={this.deletePersonHandler.bind(this,index)}
+              name={person.name}
+              age={person.age} />
           })}
           {/* <Person
             changed={this.nameChangeHandler}
@@ -223,4 +221,4 @@ class App extends Component {
 
 export default App;
 
-// ver 1.15 - 54. Handling Dynamic Content "The JavaScript Way"
+// ver 1.15 - 56. Outputting Lists"
