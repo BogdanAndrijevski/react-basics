@@ -8,9 +8,9 @@ class App extends Component {
 
   state = {
     persons: [
-      { name: 'John', age: 26 },
-      { name: 'Jack', age: 46 },
-      { name: 'Michael', age: 35 }
+      { id: 'asfa1' , name: 'John', age: 26 },
+      { id: 'vasdf1' , name: 'Jack', age: 46 },
+      { id: 'asdf11' , name: 'Michael', age: 35 }
     ],
     humans: [
       { name: 'John', age: 26 },
@@ -28,11 +28,11 @@ class App extends Component {
   }
 
 
-  switchNameHandler = (newName) => {
+  switchNameHandlerHuman = (newName) => {
     // console.log('was clicked');
     // DONT DO THIS : this.state.persons[0].name = "Marko"
     this.setState({
-      persons: [
+      humans: [
         { name: newName, age: 26 },
         { name: 'Jack', age: 46 },
         { name: 'Michael', age: 34 }
@@ -122,7 +122,8 @@ class App extends Component {
               click={() => this.deletePersonHandler(index)}
               // click={this.deletePersonHandler.bind(this,index)}
               name={person.name}
-              age={person.age} />
+              age={person.age} 
+              key={person.id}/>
           })}
           {/* <Person
             changed={this.nameChangeHandler}
