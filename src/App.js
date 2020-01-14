@@ -41,7 +41,8 @@ class App extends Component {
   }
 
   deletePersonHandler = (personIndex) => {
-    const persons = this.state.persons;
+    // const persons = this.state.persons.slice();
+    const persons = [...this.state.persons];
     persons.splice(personIndex, 1);
     this.setState({persons:persons})
   }
@@ -221,4 +222,4 @@ class App extends Component {
 
 export default App;
 
-// ver 1.15 - 56. Outputting Lists"
+// ver 1.21 - 58. Updating State Immutably"
