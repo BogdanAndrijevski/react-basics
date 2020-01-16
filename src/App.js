@@ -141,6 +141,8 @@ class App extends Component {
               key={person.id}
               changed={(event) => this.nameChangeHandler(event, person.id)}/>
           })}
+
+          
           {/* <Person
             changed={this.nameChangeHandler}
             click={this.switchNameHandler.bind(this, 'Max!')}
@@ -154,6 +156,7 @@ class App extends Component {
             age={this.state.persons[2].age} /> */}
         </div>
       )
+      style.backgroundColor = 'red';
     } // end IF
 
     if (this.state.showhumans === true) {
@@ -239,4 +242,4 @@ class App extends Component {
 
 export default App;
 
-// ver 1.23 - 60. Flexible Lists
+// ver 1.24 - 66. Setting Styles Dynamically
