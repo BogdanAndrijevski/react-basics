@@ -3,14 +3,14 @@ import './App.css';
 import Person from './Person/Person.js';
 import Human from './Human/Human.js';
 import Friend from './Friend/Friend.js';
-import Radium from 'radium';
+import Radium, { StyleRoot } from 'radium';
 class App extends Component {
 
   state = {
     persons: [
-      { id: 'asfa1' , name: 'John', age: 26 },
-      { id: 'vasdf1' , name: 'Jack', age: 46 },
-      { id: 'asdf11' , name: 'Michael', age: 35 }
+      { id: 'asfa1', name: 'John', age: 26 },
+      { id: 'vasdf1', name: 'Jack', age: 46 },
+      { id: 'asdf11', name: 'Michael', age: 35 }
     ],
     humans: [
       { name: 'John', age: 26 },
@@ -44,7 +44,7 @@ class App extends Component {
     // const persons = this.state.persons.slice();
     const persons = [...this.state.persons];
     persons.splice(personIndex, 1);
-    this.setState({persons:persons})
+    this.setState({ persons: persons })
   }
 
   changeFriendNameHandler = () => {
@@ -77,18 +77,18 @@ class App extends Component {
   }
 
   nameChangeHandler = (event, id) => {
-    const personIndex = this.state.persons.findIndex(p =>{
+    const personIndex = this.state.persons.findIndex(p => {
       return p.id === id;
     })
 
-    const person = { ...this.state.persons[personIndex]};
+    const person = { ...this.state.persons[personIndex] };
 
     person.name = event.target.value;
 
     const persons = [...this.state.persons];
     persons[personIndex] = person;
 
-    this.setState({persons: persons })
+    this.setState({ persons: persons })
   }
 
   togglePersonsHandler = () => {
@@ -115,7 +115,7 @@ class App extends Component {
       padding: '8px',
       cursor: 'pointer',
       color: 'white',
-      ':hover':{
+      ':hover': {
         backgroundColor: 'lightgreen',
         color: 'black'
       }
@@ -141,12 +141,12 @@ class App extends Component {
               click={() => this.deletePersonHandler(index)}
               // click={this.deletePersonHandler.bind(this,index)}
               name={person.name}
-              age={person.age} 
+              age={person.age}
               key={person.id}
-              changed={(event) => this.nameChangeHandler(event, person.id)}/>
+              changed={(event) => this.nameChangeHandler(event, person.id)} />
           })}
 
-          
+
           {/* <Person
             changed={this.nameChangeHandler}
             click={this.switchNameHandler.bind(this, 'Max!')}
@@ -188,76 +188,78 @@ class App extends Component {
 
     // let classes = ['red', 'bold'].join(' '); // 'red bold' - result of join
     let classes = [];
-    if(this.state.persons.length <= 2){
+    if (this.state.persons.length <= 2) {
       classes.push('red')
     }
-    if(this.state.persons.length <= 1){
+    if (this.state.persons.length <= 1) {
       classes.push('bold')
     }
     return (
-      <div className="App">
-        {/* -------------- Persons -------------------- */}
-        <div className='MainForPerson'>
-          <h1>Hello</h1>
-          <p className={classes.join(' ')}>zis is working</p>
-          <button
-            style={style}
-            onClick={this.togglePersonsHandler} >Toggle Persons</button>
-          {/* onClick={() => this.switchNameHandler('Maximilian!!')} >Switch Name</button> */}
-          {/* <button onClick={() => {return this.switchNameHandler()}} >Switch Name</button> */}
+      <StyleRoot>
+        <div className="App">
+          {/* -------------- Persons -------------------- */}
+          <div className='MainForPerson'>
+            <h1>Hello</h1>
+            <p className={classes.join(' ')}>zis is working</p>
+            <button
+              style={style}
+              onClick={this.togglePersonsHandler} >Toggle Persons</button>
+            {/* onClick={() => this.switchNameHandler('Maximilian!!')} >Switch Name</button> */}
+            {/* <button onClick={() => {return this.switchNameHandler()}} >Switch Name</button> */}
 
-          {persons}
-        </div>
+            {persons}
+          </div>
 
-        {/* ------------------------------------------- */}
+          {/* ------------------------------------------- */}
 
-        {/* -------------- Humans -------------------- */}
-        <div className='MainForHuman'>
-          <h1>Human</h1>
-          <button
-            style={btnHumanStyle}
-            onClick={this.togglePersonsHandlerHuman} >Toggle humans</button>
-          {/* onClick={() => this.switchNameHandler('Maximilian!!')} >Switch Name</button> */}
-          {/* <button onClick={() => {return this.switchNameHandler()}} >Switch Name</button> */}
+          {/* -------------- Humans -------------------- */}
+          <div className='MainForHuman'>
+            <h1>Human</h1>
+            <button
+              style={btnHumanStyle}
+              onClick={this.togglePersonsHandlerHuman} >Toggle humans</button>
+            {/* onClick={() => this.switchNameHandler('Maximilian!!')} >Switch Name</button> */}
+            {/* <button onClick={() => {return this.switchNameHandler()}} >Switch Name</button> */}
 
-          {humans}
-        </div>
+            {humans}
+          </div>
 
-        {/* ------------------------------------------- */}
+          {/* ------------------------------------------- */}
 
 
 
-        {/* -------------- Friends -------------------- */}
-        <div className='MainForFriend'>
-          <button className='btnFriendNameChange' onClick={this.changeFriendNameHandler} >Friend Name Change</button>
-          <button className='btnFriendToggle' onClick={this.toggleFriendsHandler} >Toggle Persons</button>
+          {/* -------------- Friends -------------------- */}
+          <div className='MainForFriend'>
+            <button className='btnFriendNameChange' onClick={this.changeFriendNameHandler} >Friend Name Change</button>
+            <button className='btnFriendToggle' onClick={this.toggleFriendsHandler} >Toggle Persons</button>
 
-          {/* <button
+            {/* <button
             style={style}
             onClick={this.togglePersonsHandler} >Toggle Persons</button> */}
 
-          {
-            this.state.showFriends === true ?
-              <div>
-                <Friend
-                  click={this.changeFriendNameHandler}
-                  name={this.state.friends[0].name}
-                  age={this.state.friends[0].age}>My Interests:</Friend>
-                <Friend
-                  name={this.state.friends[1].name}
-                  age={this.state.friends[1].age} />
-              </div>
-              : null
-          }
-        </div>
+            {
+              this.state.showFriends === true ?
+                <div>
+                  <Friend
+                    click={this.changeFriendNameHandler}
+                    name={this.state.friends[0].name}
+                    age={this.state.friends[0].age}>My Interests:</Friend>
+                  <Friend
+                    name={this.state.friends[1].name}
+                    age={this.state.friends[1].age} />
+                </div>
+                : null
+            }
+          </div>
 
-        {/* ------------------------------------------- */}
+          {/* ------------------------------------------- */}
 
-      </div> // <div className="App">
+        </div> {/* ----------<div className="App">----------------- */}
+      </StyleRoot>
     );
   }
 }
 
 export default Radium(App);
 
-// ver 1.26 - 68. Adding and Using Radium
+// ver 1.27 - 69. Using Radium for Media Queries

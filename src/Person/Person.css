@@ -8,3 +8,10 @@
     background-color: black;
 
 }
+/* 
+@media (min-width: 500px){
+    .Person{
+        width: 70%;
+        background-color: red;
+    }
+} */
