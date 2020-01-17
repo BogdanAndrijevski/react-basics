@@ -3,7 +3,7 @@ import './App.css';
 import Person from './Person/Person.js';
 import Human from './Human/Human.js';
 import Friend from './Friend/Friend.js';
-import Radium, { StyleRoot } from 'radium';
+
 class App extends Component {
 
   state = {
@@ -195,7 +195,7 @@ class App extends Component {
       classes.push('bold')
     }
     return (
-      <StyleRoot>
+     
         <div className="App">
           {/* -------------- Persons -------------------- */}
           <div className='MainForPerson'>
@@ -254,12 +254,13 @@ class App extends Component {
 
           {/* ------------------------------------------- */}
 
-        </div> {/* ----------<div className="App">----------------- */}
-      </StyleRoot>
+        </div>  // <div className="App">
+       
+     
     );
   }
 }
 
-export default Radium(App);
+export default App;
 
-// ver 1.27 - 69. Using Radium for Media Queries
+// ver 1.28 - 70. Introducing Styled Components
