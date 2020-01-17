@@ -2,6 +2,16 @@
   text-align: center;
 } */
 
+
+.red{
+color:red;
+}
+
+.bold{
+font-weight: bold;
+}
+
+
 .btnFriendNameChange {
   background-color: black;
   border: 2px solid darksalmon;

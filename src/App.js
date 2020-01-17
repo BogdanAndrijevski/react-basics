@@ -177,11 +177,21 @@ class App extends Component {
       )
     }
 
+
+    // let classes = ['red', 'bold'].join(' '); // 'red bold' - result of join
+    let classes = [];
+    if(this.state.persons.length <= 2){
+      classes.push('red')
+    }
+    if(this.state.persons.length <= 1){
+      classes.push('bold')
+    }
     return (
       <div className="App">
         {/* -------------- Persons -------------------- */}
         <div className='MainForPerson'>
           <h1>Hello</h1>
+          <p className={classes.join(' ')}>zis is working</p>
           <button
             style={style}
             onClick={this.togglePersonsHandler} >Toggle Persons</button>
@@ -242,4 +252,4 @@ class App extends Component {
 
 export default App;
 
-// ver 1.24 - 66. Setting Styles Dynamically
+// ver 1.25 - 67. Setting Class Names Dynamically
