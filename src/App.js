@@ -3,7 +3,7 @@ import './App.css';
 import Person from './Person/Person.js';
 import Human from './Human/Human.js';
 import Friend from './Friend/Friend.js';
-
+import Radium from 'radium';
 class App extends Component {
 
   state = {
@@ -114,7 +114,11 @@ class App extends Component {
       border: '2px solid lightgreen',
       padding: '8px',
       cursor: 'pointer',
-      color: 'white'
+      color: 'white',
+      ':hover':{
+        backgroundColor: 'lightgreen',
+        color: 'black'
+      }
     }
 
     const btnHumanStyle = {
@@ -157,6 +161,10 @@ class App extends Component {
         </div>
       )
       style.backgroundColor = 'red';
+      style[':hover'] = {
+        backgroundColor: 'salmon',
+        color: 'black'
+      }
     } // end IF
 
     if (this.state.showhumans === true) {
@@ -250,6 +258,6 @@ class App extends Component {
   }
 }
 
-export default App;
+export default Radium(App);
 
-// ver 1.25 - 67. Setting Class Names Dynamically
+// ver 1.26 - 68. Adding and Using Radium
