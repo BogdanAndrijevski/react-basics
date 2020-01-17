@@ -3,6 +3,23 @@ import './App.css';
 import Person from './Person/Person.js';
 import Human from './Human/Human.js';
 import Friend from './Friend/Friend.js';
+import styled from 'styled-components';
+
+const StyledButton = styled.button`
+
+  background-color: purple;
+  font: inherit;
+  border: 2px solid lightgreen;
+  padding: 8px;
+  cursor: pointer;
+  color: white;
+  &:hover {
+    background-color: lightgreen;
+    color: black;
+  }
+
+`;
+
 
 class App extends Component {
 
@@ -195,72 +212,73 @@ class App extends Component {
       classes.push('bold')
     }
     return (
-     
-        <div className="App">
-          {/* -------------- Persons -------------------- */}
-          <div className='MainForPerson'>
-            <h1>Hello</h1>
-            <p className={classes.join(' ')}>zis is working</p>
-            <button
-              style={style}
-              onClick={this.togglePersonsHandler} >Toggle Persons</button>
-            {/* onClick={() => this.switchNameHandler('Maximilian!!')} >Switch Name</button> */}
-            {/* <button onClick={() => {return this.switchNameHandler()}} >Switch Name</button> */}
 
-            {persons}
-          </div>
+      <div className="App">
+        {/* -------------- Persons -------------------- */}
+        <div className='MainForPerson'>
+          <h1>Hello</h1>
+          <p className={classes.join(' ')}>zis is working</p>
+          <StyledButton
+            onClick={this.togglePersonsHandler} >
+            Toggle Persons
+          </StyledButton>
+          {/* onClick={() => this.switchNameHandler('Maximilian!!')} >Switch Name</button> */}
+          {/* <button onClick={() => {return this.switchNameHandler()}} >Switch Name</button> */}
 
-          {/* ------------------------------------------- */}
+          {persons}
+        </div>
 
-          {/* -------------- Humans -------------------- */}
-          <div className='MainForHuman'>
-            <h1>Human</h1>
-            <button
-              style={btnHumanStyle}
-              onClick={this.togglePersonsHandlerHuman} >Toggle humans</button>
-            {/* onClick={() => this.switchNameHandler('Maximilian!!')} >Switch Name</button> */}
-            {/* <button onClick={() => {return this.switchNameHandler()}} >Switch Name</button> */}
+        {/* ------------------------------------------- */}
 
-            {humans}
-          </div>
+        {/* -------------- Humans -------------------- */}
+        <div className='MainForHuman'>
+          <h1>Human</h1>
+          <button
+            style={btnHumanStyle}
+            onClick={this.togglePersonsHandlerHuman} >Toggle humans</button>
+          {/* onClick={() => this.switchNameHandler('Maximilian!!')} >Switch Name</button> */}
+          {/* <button onClick={() => {return this.switchNameHandler()}} >Switch Name</button> */}
 
-          {/* ------------------------------------------- */}
+          {humans}
+        </div>
+
+        {/* ------------------------------------------- */}
 
 
 
-          {/* -------------- Friends -------------------- */}
-          <div className='MainForFriend'>
-            <button className='btnFriendNameChange' onClick={this.changeFriendNameHandler} >Friend Name Change</button>
-            <button className='btnFriendToggle' onClick={this.toggleFriendsHandler} >Toggle Persons</button>
+        {/* -------------- Friends -------------------- */}
+        <div className='MainForFriend'>
+          <button className='btnFriendNameChange' onClick={this.changeFriendNameHandler} >Friend Name Change</button>
+          <button className='btnFriendToggle' onClick={this.toggleFriendsHandler} >Toggle Persons</button>
 
-            {/* <button
+          {/* <button
             style={style}
             onClick={this.togglePersonsHandler} >Toggle Persons</button> */}
 
-            {
-              this.state.showFriends === true ?
-                <div>
-                  <Friend
-                    click={this.changeFriendNameHandler}
-                    name={this.state.friends[0].name}
-                    age={this.state.friends[0].age}>My Interests:</Friend>
-                  <Friend
-                    name={this.state.friends[1].name}
-                    age={this.state.friends[1].age} />
-                </div>
-                : null
-            }
-          </div>
+          {
+            this.state.showFriends === true ?
+              <div>
+                <Friend
+                  click={this.changeFriendNameHandler}
+                  name={this.state.friends[0].name}
+                  age={this.state.friends[0].age}>My Interests:</Friend>
+                <Friend
+                  name={this.state.friends[1].name}
+                  age={this.state.friends[1].age} />
+              </div>
+              : null
+          }
+        </div>
 
-          {/* ------------------------------------------- */}
+        {/* ------------------------------------------- */}
 
-        </div>  // <div className="App">
-       
-     
+      </div>  // <div className="App">
+
+
     );
   }
 }
 
 export default App;
 
-// ver 1.28 - 70. Introducing Styled Components
+// ver 1.29 - 71. More on Styled Components

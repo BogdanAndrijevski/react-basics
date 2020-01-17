@@ -16,16 +16,16 @@ const person = (props) => {
 
     @media (min-width: 500px){
             width: 70%;
-            background-color: red;
+            background-color: rgb(128, 0, 128, 0.2);
     }
     `;
 
-    const style = {
-        '@media (min-width: 500px)': {
-            width: '70%',
-            backgroundColor: 'red'
-        }
-    }
+    // const style = {
+    //     '@media (min-width: 500px)': {
+    //         width: '70%',
+    //         backgroundColor: 'red'
+    //     }
+    // }
     return (
         // <div className='Person'  style={style}>
         <StyledDiv>
