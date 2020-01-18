@@ -7,14 +7,14 @@ import styled from 'styled-components';
 
 const StyledButton = styled.button`
 
-  background-color: purple;
+  background-color: ${props => props.alt ? 'darkred' : 'purple'};
   font: inherit;
   border: 2px solid lightgreen;
   padding: 8px;
   cursor: pointer;
   color: white;
   &:hover {
-    background-color: lightgreen;
+    background-color: ${props => props.alt ? 'salmon' : 'lightgreen'};
     color: black;
   }
 
@@ -219,6 +219,7 @@ class App extends Component {
           <h1>Hello</h1>
           <p className={classes.join(' ')}>zis is working</p>
           <StyledButton
+            alt={this.state.showPersons}
             onClick={this.togglePersonsHandler} >
             Toggle Persons
           </StyledButton>
@@ -281,4 +282,4 @@ class App extends Component {
 
 export default App;
 
-// ver 1.29 - 71. More on Styled Components
+// ver 1.30 - 72. Styled Components & Dynamic Styles
