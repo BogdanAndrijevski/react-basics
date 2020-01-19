@@ -2,17 +2,33 @@
   text-align: center;
 } */
 
-
-.red{
-color:red;
+.red {
+  color: red;
 }
 
-.bold{
-font-weight: bold;
+.bold {
+  font-weight: bold;
 }
 
+.App .btnHumanStyle {
+  background-color: darkblue;
+  font: inherit;
+  border: 2px solid lightblue;
+  padding: 8px;
+  cursor: pointer;
+  color: white;
+}
 
-.btnFriendNameChange {
+.App .btnHumanStyle:hover {
+  background-color: skyblue;
+  font: inherit;
+  border: 2px solid lightblue;
+  padding: 8px;
+  cursor: pointer;
+  color: black;
+}
+
+.App .btnFriendNameChange {
   background-color: black;
   border: 2px solid darksalmon;
   color: darksalmon;
@@ -22,10 +38,18 @@ font-weight: bold;
   display: block;
   font: inherit;
 }
-
-.btnFriendToggle {
+.App .btnFriendNameChange:hover {
+  background-color: black;
+  border: 2px solid lime;
+  color: lime;
+  padding: 8px;
+  margin: 18px auto;
+  cursor: pointer;
+  display: block;
   font: inherit;
-
+}
+.App .btnFriendToggle {
+  font: inherit;
   background-color: darkred;
   border: 2px solid lightsalmon;
   color: white;
@@ -78,16 +102,14 @@ input[type="text"], textarea {
 
 } */
 
-.App button{
-  background-color:purple;
+.App button {
+  background-color: purple;
   /* background-color: ${props => props.alt ? 'darkred' : 'purple'}; */
   font: inherit;
   border: 2px solid lightgreen;
   padding: 8px;
   cursor: pointer;
   color: white;
-  
-
 }
 
 .App button:hover {
@@ -96,9 +118,10 @@ input[type="text"], textarea {
   color: black;
 }
 
-.App button.Red{
+.App button.Red {
   background-color: red;
 }
-.App button.Red:hover{
+
+.App button.Red:hover {
   background-color: salmon;
 }

@@ -6,7 +6,7 @@ import Friend from './Friend/Friend.js';
 // import styled from 'styled-components';
 
 
-
+// btnFriendNameChange
 
 class App extends Component {
 
@@ -127,14 +127,14 @@ class App extends Component {
     //   }
     // }
 
-    const btnHumanStyle = {
-      backgroundColor: 'blue',
-      font: 'inherit',
-      border: '2px solid lightblue',
-      padding: '8px',
-      cursor: 'pointer',
-      color: 'white'
-    }
+    // const btnHumanStyle = {
+    //   backgroundColor: 'blue',
+    //   font: 'inherit',
+    //   border: '2px solid lightblue',
+    //   padding: '8px',
+    //   cursor: 'pointer',
+    //   color: 'white'
+    // }
 
     let persons = null;
 
@@ -201,7 +201,7 @@ class App extends Component {
 
 
     // let classes = ['red', 'bold'].join(' '); // 'red bold' - result of join
-    let assignedClasses = [];
+    let assignedClasses = []; // pva e za 'zis is working'
     if (this.state.persons.length <= 2) {
       assignedClasses.push(classes.red)
     }
@@ -236,7 +236,7 @@ class App extends Component {
         <div className={classes.MainForHuman}>
           <h1>Human</h1>
           <button
-            style={btnHumanStyle}
+            className={classes.btnHumanStyle}
             onClick={this.togglePersonsHandlerHuman} >Toggle humans</button>
           {/* onClick={() => this.switchNameHandler('Maximilian!!')} >Switch Name</button> */}
           {/* <button onClick={() => {return this.switchNameHandler()}} >Switch Name</button> */}
@@ -283,4 +283,4 @@ class App extends Component {
 
 export default App;
 
-// ver 1.31 - 73. Working with CSS Modules
+// ver 1.32 - 73. Working with CSS Modules - Playing with css
