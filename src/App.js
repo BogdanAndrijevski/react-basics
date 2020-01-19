@@ -208,6 +208,7 @@ class App extends Component {
     if (this.state.persons.length <= 1) {
       assignedClasses.push(classes.bold)
     }
+
     return (
 
       <div className={classes.App}>
@@ -218,7 +219,7 @@ class App extends Component {
           <button
             // className='button'
             // className={classes.Button}
-            className={btnClass.join(' ')}
+            className={btnClass}
             // alt={this.state.showPersons}
             onClick={this.togglePersonsHandler} >
             Toggle Persons
