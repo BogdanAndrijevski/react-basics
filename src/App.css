@@ -119,9 +119,18 @@ input[type="text"], textarea {
 }
 
 .App button.Red {
-  background-color: red;
+  background-color: darkred;
 }
 
 .App button.Red:hover {
   background-color: salmon;
+}
+
+.App .btnHumanStyle.Black {
+  background-color: black;
+  /* color: black; */
+}
+.App .btnHumanStyle.Black:hover {
+  background-color: darkviolet;
+  color: white;
 }

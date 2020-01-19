@@ -140,6 +140,8 @@ class App extends Component {
 
     // let btnClass = [classes.Button];
     let btnClass = '';
+    let btnHuman = [classes.btnHumanStyle];
+   
 
     let humans = null;
 
@@ -178,6 +180,7 @@ class App extends Component {
 
       // btnClass.push(classes.Red)
       btnClass = classes.Red;
+      // btnClassHuman = classes.Orange;
       
     } // end IF
 
@@ -197,6 +200,8 @@ class App extends Component {
             age={this.state.humans[2].age} />
         </div>
       )
+      btnHuman.push(classes.Black);
+
     }
 
 
@@ -236,7 +241,11 @@ class App extends Component {
         <div className={classes.MainForHuman}>
           <h1>Human</h1>
           <button
-            className={classes.btnHumanStyle}
+            // className={classes.btnHumanStyle}
+            // className={btnHuman}
+            className={btnHuman.join(' ')}
+            // className={btnClassHuman + classes.btnHumanStyle + classes.asd}
+            // className={btnClassHuman, classes.btnHumanStyle, classes.asd}
             onClick={this.togglePersonsHandlerHuman} >Toggle humans</button>
           {/* onClick={() => this.switchNameHandler('Maximilian!!')} >Switch Name</button> */}
           {/* <button onClick={() => {return this.switchNameHandler()}} >Switch Name</button> */}
@@ -283,4 +292,4 @@ class App extends Component {
 
 export default App;
 
-// ver 1.32 - 73. Working with CSS Modules - Playing with css
+// ver 1.33 - 73. Working with CSS Modules - Playing with css part 2
