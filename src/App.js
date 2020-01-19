@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import './App.css';
+import classes from './App.css';
 import Person from './Person/Person.js';
 import Human from './Human/Human.js';
 import Friend from './Friend/Friend.js';
-import styled from 'styled-components';
+// import styled from 'styled-components';
 
 
 
@@ -112,18 +112,20 @@ class App extends Component {
 
 
   render() {
-    const style = {
-      backgroundColor: 'green',
-      font: 'inherit',
-      border: '2px solid lightgreen',
-      padding: '8px',
-      cursor: 'pointer',
-      color: 'white',
-      ':hover': {
-        backgroundColor: 'lightgreen',
-        color: 'black'
-      }
-    }
+
+
+    // const style = {
+    //   backgroundColor: 'green',
+    //   font: 'inherit',
+    //   border: '2px solid lightgreen',
+    //   padding: '8px',
+    //   cursor: 'pointer',
+    //   color: 'white',
+    //   ':hover': {
+    //     backgroundColor: 'lightgreen',
+    //     color: 'black'
+    //   }
+    // }
 
     const btnHumanStyle = {
       backgroundColor: 'blue',
@@ -135,6 +137,10 @@ class App extends Component {
     }
 
     let persons = null;
+
+    // let btnClass = [classes.Button];
+    let btnClass = '';
+
     let humans = null;
 
     if (this.state.showPersons === true) {
@@ -164,11 +170,15 @@ class App extends Component {
             age={this.state.persons[2].age} /> */}
         </div>
       )
-      style.backgroundColor = 'red';
-      style[':hover'] = {
-        backgroundColor: 'salmon',
-        color: 'black'
-      }
+      // style.backgroundColor = 'red';
+      // style[':hover'] = {
+      //   backgroundColor: 'salmon',
+      //   color: 'black'
+      // }
+
+      // btnClass.push(classes.Red)
+      btnClass = classes.Red;
+      
     } // end IF
 
     if (this.state.showhumans === true) {
@@ -191,22 +201,24 @@ class App extends Component {
 
 
     // let classes = ['red', 'bold'].join(' '); // 'red bold' - result of join
-    let classes = [];
+    let assignedClasses = [];
     if (this.state.persons.length <= 2) {
-      classes.push('red')
+      assignedClasses.push(classes.red)
     }
     if (this.state.persons.length <= 1) {
-      classes.push('bold')
+      assignedClasses.push(classes.bold)
     }
     return (
 
-      <div className="App">
+      <div className={classes.App}>
         {/* -------------- Persons -------------------- */}
-        <div className='MainForPerson'>
+        <div className={classes.MainForPerson}>
           <h1>Hello</h1>
-          <p className={classes.join(' ')}>zis is working</p>
+          <p className={assignedClasses.join(' ')}>zis is working</p>
           <button
-            className='button'
+            // className='button'
+            // className={classes.Button}
+            className={btnClass.join(' ')}
             // alt={this.state.showPersons}
             onClick={this.togglePersonsHandler} >
             Toggle Persons
@@ -220,7 +232,7 @@ class App extends Component {
         {/* ------------------------------------------- */}
 
         {/* -------------- Humans -------------------- */}
-        <div className='MainForHuman'>
+        <div className={classes.MainForHuman}>
           <h1>Human</h1>
           <button
             style={btnHumanStyle}
@@ -236,9 +248,9 @@ class App extends Component {
 
 
         {/* -------------- Friends -------------------- */}
-        <div className='MainForFriend'>
-          <button className='btnFriendNameChange' onClick={this.changeFriendNameHandler} >Friend Name Change</button>
-          <button className='btnFriendToggle' onClick={this.toggleFriendsHandler} >Toggle Persons</button>
+        <div className={classes.MainForFriend}>
+          <button className={classes.btnFriendNameChange} onClick={this.changeFriendNameHandler} >Friend Name Change</button>
+          <button className={classes.btnFriendToggle} onClick={this.toggleFriendsHandler} >Toggle Persons</button>
 
           {/* <button
             style={style}
@@ -270,4 +282,4 @@ class App extends Component {
 
 export default App;
 
-// ver 1.30 - 72. Styled Components & Dynamic Styles
+// ver 1.31 - 73. Working with CSS Modules
