@@ -5,20 +5,7 @@ import Human from './Human/Human.js';
 import Friend from './Friend/Friend.js';
 import styled from 'styled-components';
 
-const StyledButton = styled.button`
 
-  background-color: ${props => props.alt ? 'darkred' : 'purple'};
-  font: inherit;
-  border: 2px solid lightgreen;
-  padding: 8px;
-  cursor: pointer;
-  color: white;
-  &:hover {
-    background-color: ${props => props.alt ? 'salmon' : 'lightgreen'};
-    color: black;
-  }
-
-`;
 
 
 class App extends Component {
@@ -218,11 +205,12 @@ class App extends Component {
         <div className='MainForPerson'>
           <h1>Hello</h1>
           <p className={classes.join(' ')}>zis is working</p>
-          <StyledButton
-            alt={this.state.showPersons}
+          <button
+            className='button'
+            // alt={this.state.showPersons}
             onClick={this.togglePersonsHandler} >
             Toggle Persons
-          </StyledButton>
+          </button>
           {/* onClick={() => this.switchNameHandler('Maximilian!!')} >Switch Name</button> */}
           {/* <button onClick={() => {return this.switchNameHandler()}} >Switch Name</button> */}
 

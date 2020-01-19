@@ -77,3 +77,21 @@ input[type="text"], textarea {
   background-color : #d1d1d1; 
 
 } */
+
+.button{
+  background-color:purple;
+  /* background-color: ${props => props.alt ? 'darkred' : 'purple'}; */
+  font: inherit;
+  border: 2px solid lightgreen;
+  padding: 8px;
+  cursor: pointer;
+  color: white;
+  
+
+}
+
+.button:hover {
+  background-color: lightgreen;
+  /* background-color: ${props => props.alt ? 'salmon' : 'lightgreen'}; */
+  color: black;
+}
