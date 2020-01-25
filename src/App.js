@@ -6,8 +6,6 @@ import Friend from './Friend/Friend.js';
 // import styled from 'styled-components';
 
 
-// btnFriendNameChange
-
 class App extends Component {
 
   state = {
@@ -33,7 +31,6 @@ class App extends Component {
 
 
   switchNameHandlerHuman = (newName) => {
-    // console.log('was clicked');
     // DONT DO THIS : this.state.persons[0].name = "Marko"
     this.setState({
       humans: [
@@ -60,15 +57,6 @@ class App extends Component {
     })
   }
 
-  // nameChangeHandler = (event) => {
-  //   this.setState({
-  //     persons: [
-  //       { name: event.target.value, age: 26 },
-  //       { name: 'Jack', age: 46 },
-  //       { name: 'Michael', age: 35 }
-  //     ]
-  //   })
-  // }
 
   nameChangeHandlerHuman = (event) => {
     this.setState({
@@ -137,11 +125,8 @@ class App extends Component {
     // }
 
     let persons = null;
-
-    // let btnClass = [classes.Button];
     let btnClass = '';
     let btnHuman = [classes.btnHumanStyle];
-   
 
     let humans = null;
 
@@ -158,30 +143,9 @@ class App extends Component {
               changed={(event) => this.nameChangeHandler(event, person.id)} />
           })}
 
-
-          {/* <Person
-            changed={this.nameChangeHandler}
-            click={this.switchNameHandler.bind(this, 'Max!')}
-            name={this.state.persons[0].name}
-            age={this.state.persons[0].age}>My Hobby:</Person>
-          <Person
-            name={this.state.persons[1].name}
-            age={this.state.persons[1].age} />
-          <Person
-            name={this.state.persons[2].name}
-            age={this.state.persons[2].age} /> */}
         </div>
       )
-      // style.backgroundColor = 'red';
-      // style[':hover'] = {
-      //   backgroundColor: 'salmon',
-      //   color: 'black'
-      // }
-
-      // btnClass.push(classes.Red)
       btnClass = classes.Red;
-      // btnClassHuman = classes.Orange;
-      
     } // end IF
 
     if (this.state.showhumans === true) {
@@ -206,7 +170,7 @@ class App extends Component {
 
 
     // let classes = ['red', 'bold'].join(' '); // 'red bold' - result of join
-    let assignedClasses = []; // pva e za 'zis is working'
+    let assignedClasses = []; // ova e za 'zis is working'
     if (this.state.persons.length <= 2) {
       assignedClasses.push(classes.red)
     }
@@ -222,49 +186,28 @@ class App extends Component {
           <h1>Hello</h1>
           <p className={assignedClasses.join(' ')}>zis is working</p>
           <button
-            // className='button'
-            // className={classes.Button}
             className={btnClass}
-            // alt={this.state.showPersons}
             onClick={this.togglePersonsHandler} >
             Toggle Persons
           </button>
-          {/* onClick={() => this.switchNameHandler('Maximilian!!')} >Switch Name</button> */}
-          {/* <button onClick={() => {return this.switchNameHandler()}} >Switch Name</button> */}
-
           {persons}
         </div>
-
         {/* ------------------------------------------- */}
 
         {/* -------------- Humans -------------------- */}
         <div className={classes.MainForHuman}>
           <h1>Human</h1>
           <button
-            // className={classes.btnHumanStyle}
-            // className={btnHuman}
             className={btnHuman.join(' ')}
-            // className={btnClassHuman + classes.btnHumanStyle + classes.asd}
-            // className={btnClassHuman, classes.btnHumanStyle, classes.asd}
             onClick={this.togglePersonsHandlerHuman} >Toggle humans</button>
-          {/* onClick={() => this.switchNameHandler('Maximilian!!')} >Switch Name</button> */}
-          {/* <button onClick={() => {return this.switchNameHandler()}} >Switch Name</button> */}
-
           {humans}
         </div>
-
         {/* ------------------------------------------- */}
-
-
 
         {/* -------------- Friends -------------------- */}
         <div className={classes.MainForFriend}>
           <button className={classes.btnFriendNameChange} onClick={this.changeFriendNameHandler} >Friend Name Change</button>
           <button className={classes.btnFriendToggle} onClick={this.toggleFriendsHandler} >Toggle Persons</button>
-
-          {/* <button
-            style={style}
-            onClick={this.togglePersonsHandler} >Toggle Persons</button> */}
 
           {
             this.state.showFriends === true ?
@@ -292,4 +235,4 @@ class App extends Component {
 
 export default App;
 
-// ver 1.33 - 73. Working with CSS Modules - Playing with css part 2
+// ver 1.35 - Clearing Up
